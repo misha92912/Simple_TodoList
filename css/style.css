@@ -1,0 +1,237 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inconsolata', monospace;
+}
+
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+}
+
+body{
+    background-color: rgb(63, 63, 63);
+    background-image: url(../images/city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+.content{
+    padding: 0 50px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 1em 50px;
+    margin: 2em 0 0;
+}
+.content h1 {
+    font-size: 6vw;
+    padding: 0 1em;
+    margin: 4px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lily Script One', cursive;
+}
+form {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 1);
+    opacity: 0.7;
+    z-index: 10;
+}
+form:hover{
+    opacity: 1;
+}
+input[type = 'text'] {
+    width: 100%;
+    padding: 5px 10px;
+}
+input {
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+input[type = 'submit']{
+    padding: 10px 80px;
+    cursor: pointer;
+}
+input[type = 'text']:focus{
+    color: black;
+    background-color: rgba(249, 249, 249, 1);
+}
+input:hover{
+    background-color: rgba(249, 249, 249, 0.349);
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.select-all{
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.301);
+    border: 1px solid rgb(255, 255, 255);
+    /* display: none; */
+}
+.select-all:hover{
+    background-color: rgba(255, 255, 255, 0.701);
+}
+.select-all:active{
+    background-color: rgba(255, 255, 255, 1);
+}
+.select-all img{
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+.todo {
+    display: grid; 
+    grid-template-columns: 50px 4fr 3fr 40px;
+    grid-template-areas:
+                "b a a s"
+                "t t t t";
+    grid-template-rows: 1fr 50px;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.todo h3 {
+    grid-area: a;
+    inline-size: 100%;
+    overflow-wrap: break-word;
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+}
+
+.todo textarea{
+    width: 100%;
+    height: 100%;
+    font-size: 0.7em;
+}
+.select{
+    grid-area: s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 50%;
+    border: 1px solid black;
+    color: white; 
+    width:  35px;
+    height: 35px; 
+    cursor: pointer;
+}
+.time{
+    grid-area: t;
+    align-self: flex-end;
+    justify-self: flex-end;
+    font-size: 1.5em;
+}
+.buttons-container{
+    display: flex; 
+    flex-direction: column-reverse;
+    grid-area: b;
+    align-self: flex-start;
+    justify-self: center;
+    justify-content: center; 
+    gap: 10px;
+    padding: 0.5em 0;
+}
+.done, .delete, .edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    color: white; 
+    width:  35px;
+    height: 35px; 
+    cursor: pointer;
+}
+.done:hover, .delete:hover, .edit:hover{
+    filter: brightness(1.2);
+    transform: scale(1.005);
+}
+.todo input[type='checkbox']{
+    display: none;
+}
+.select:hover{
+    background-color: rgba(255, 255, 255, 0.507);
+}
+.select:active{
+    background-color: rgba(255, 255, 255, 1);
+}
+.done:hover{
+    background-color: green;
+} 
+.delete:hover{
+    background-color: rgba(174, 2, 2, 0.8);
+}
+.edit:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.comleted-buttun{
+    background-color: grey;
+}
+
+
+@media (max-width:800px) {
+    .content{
+        padding: 0 30px;
+    }
+    input[type = 'submit']{
+        padding: 10px 40px;
+    }
+    .todo h3{
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width:500px) {
+    .content{
+        padding: 0 10px;
+    }
+    input[type = 'submit']{
+        padding: 10px 20px;
+    }
+    .todo h3{
+        font-size: 1.5em;
+    }
+    .time{
+        font-size: 1em;
+    }
+}

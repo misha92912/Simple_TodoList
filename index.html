@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do list</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="./images/icons8-список-дел-100.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800&family=Vast+Shadow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800&family=Lily+Script+One&family=Vast+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h1>My To-Do list</h1> 
+        </div>
+
+        <form name="addTodo">
+            <input type="text" name="todo">
+            <input type="submit" value="ADD">
+            <span class="select-all">
+                <img src="./images/icons8-список-дел-100.png" alt="">
+            </span>
+        </form>
+    
+        <div class="todos"></div>
+    </div>
+    <footer>
+        <span>Created by Mykhailo_Chumak</span>
+        <span>Web22</span>
+    </footer>
+    <script src="./js/todo.component.js"></script>
+    <script src="./js/lsd.js"></script>
+    <script src="./js/todos.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
